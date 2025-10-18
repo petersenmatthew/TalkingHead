@@ -1790,7 +1790,7 @@ class TalkingHead {
       } else if (this.poseName) {
         poseTemplateName = this.poseName;
       }
-      // console.log(`[TalkingHead] Running pose template: ${poseTemplateName || 'unknown'}`);
+      console.log(`[TalkingHead] Running pose template: ${poseTemplateName || 'unknown'}`);
     } catch(e) {
       // ignore logging errors
     }
@@ -1886,7 +1886,7 @@ class TalkingHead {
     this.mood = this.animMoods[this.moodName];
     
     // Log mood change
-    // console.log(`[TalkingHead] Mood changed to: ${this.moodName}`);
+    console.log(`[TalkingHead] Mood changed to: ${this.moodName}`);
 
     // Reset morph target baseline
     for( let mt of Object.keys(this.mtAvatar) ) {
@@ -1910,7 +1910,7 @@ class TalkingHead {
       
       // Log animation being added (only for new mood setups)
       if (this.moodName !== 'neutral') {
-        // console.log(`[TalkingHead] Added mood animation: ${x.name} (${this.moodName})`);
+        console.log(`[TalkingHead] Added mood animation: ${x.name} (${this.moodName})`);
       }
     });
 
@@ -2370,7 +2370,7 @@ class TalkingHead {
         } else {
           // Only log completion for important animations
           if (['head', 'breathing', 'pose'].includes(x.template.name) && this.moodName !== 'neutral') {
-            // console.log(`[TalkingHead] Completed mood animation: ${x.template.name} (mood: ${this.moodName})`);
+            console.log(`[TalkingHead] Completed mood animation: ${x.template.name} (mood: ${this.moodName})`);
           }
           this.animQueue.splice(i--, 1);
           l--;
@@ -3257,7 +3257,7 @@ class TalkingHead {
     } else {
       this.stateName = 'idle';
       this.isSpeaking = false;
-      // console.log(`[TalkingHead] State changed to: idle (mood: ${this.moodName})`);
+      console.log(`[TalkingHead] State changed to: idle (mood: ${this.moodName})`);
     }
   }
 
@@ -3270,7 +3270,7 @@ class TalkingHead {
     this.stateName = 'idle';
     this.isSpeaking = false;
     this.isAudioPlaying = false;
-    // (`[TalkingHead] State changed to: idle (mood: ${this.moodName}) - Audio stopped`);
+    console.log(`[TalkingHead] State changed to: idle (mood: ${this.moodName}) - Audio stopped`);
     this.animQueue = this.animQueue.filter( x  => x.template.name !== 'viseme' && x.template.name !== 'subtitles' && x.template.name !== 'blendshapes' );
     if ( this.armature ) {
       this.resetLips();
