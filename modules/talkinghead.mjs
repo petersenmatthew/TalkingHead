@@ -3577,7 +3577,7 @@ class TalkingHead {
       // Add new anim
       const templateLookAt = {
         name: 'lookat',
-        dt: [750,t],
+        dt: [150,t],
         vs: {
           bodyRotateX: [ drotx ],
           bodyRotateY: [ droty ],
@@ -3675,7 +3675,7 @@ class TalkingHead {
       // Add new anim
       const templateLookAt = {
         name: 'lookat',
-        dt: [750,t],
+        dt: [150,t],
         vs: {
           bodyRotateX: [ rotx + drotx ],
           bodyRotateY: [ roty + droty ],
